@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+	.container
+		<a class="btn btn-primary" href="/" role="button" >主页</a>
+		.row
+			
+			.col-md-1
+
+			.col-md-5
+				dl.dl-horizontal
+					dt 文章标题
+					dd= blog.title
+					dt 作者标识
+					dd= blog.currentBlogApp
+					dt 请求标识
+					dd= blog.requestId
+					dt 作者名称
+					dd= blog.author

@@ -1,0 +1,31 @@
+﻿extends ../layout
+
+block content
+	.container
+		.row
+		table.table.table-hover.table-bordered
+				thead
+					tr
+						th 文章标题
+						th 作者名称
+						th 作者标识
+						th 请求标识
+						th 录入时间
+						th 更新时间
+						th 查看
+						th 更新
+						th 删除
+					tbody
+						each item in blogs
+							tr(class="item-id-#{item._id}")
+								td #{item.title}
+								td #{item.author}
+								td #{item.currentBlogApp}
+								td #{item.requestId}
+								td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
+								td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+								td: a(target="_blank", href="http://www.cnblogs.com/#{item.currentBlogApp}/p/#{item.requestId}.html")  查看
+								td: a(target="_blank", href="../admin/update1/#{item._id}")  修改
+								td
+									button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
+	script(src="/js/admin1.js")

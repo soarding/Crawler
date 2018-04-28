@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post",action="/admin/blog/new")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 文章标题
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="blog[title]",value="#{blog.title}")
+
+				.form-group
+					label.col-sm-2.control-label(for="inputDoctor") 作者标识
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="blog[currentBlogApp]",value="#{blog.currentBlogApp}")
+				.form-group
+					label.col-sm-2.control-label(for="inputCountry") 请求标识
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="blog[requestId]",value="#{blog.requestId}")
+				.form-group
+					label.col-sm-2.control-label(for="inputLanguage") 作者名称
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="blog[author]",value="#{blog.author}")
+				.form-group
+					.col-sm-offset-6.col-sm-6 
+					button.btn.btn-default(type="submit") 录入
+					button.btn.btn-default(type="submit") 更新

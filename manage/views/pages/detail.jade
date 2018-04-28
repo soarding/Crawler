@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+	.container
+		<a class="btn btn-primary" href="/" role="button" >主页</a>
+		.row
+			
+			.col-md-1
+
+			.col-md-5
+				dl.dl-horizontal
+					dt 作者名称
+					dd= movie.name
+					dt 入园天数
+					dd= movie.age
+					dt 粉丝
+					dd= movie.fans
+					dt 关注
+					dd= movie.focus
+

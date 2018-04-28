@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post",action="/movie/name")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 作者名称
+					.col-sm-2
+						input#inputTitle.form-control(type="text",name="movie[name]")
+					.col-sm-2
+						button.btn.btn-default(type="submit") 查询作者
+					<a class="btn btn-default" href="/admin/movie" role="button">添加作者</a>
+			form.form-horizontal(method="post",action="/blog/title")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 博文名称
+					.col-sm-2
+						input#inputTitle.form-control(type="text",name="blog[title]")
+					.col-sm-2
+						button.btn.btn-default(type="submit") 查询博文
+					<a class="btn btn-default" href="/admin/blog" role="button">添加博文</a>
+			form.form-horizontal(method="post",action="/blog/author")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 作者名称
+					.col-sm-2
+						input#inputTitle.form-control(type="text",name="blog[author]")
+					.col-sm-2
+						button.btn.btn-default(type="submit") 查询博文
+			each item in movies
+				.col-md-2
+					.thumbnail
+						a(href="/movie/#{item._id}")
+
+						.caption
+							h3 #{item.name}
+							p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 查看
